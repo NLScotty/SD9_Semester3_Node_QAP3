@@ -1,11 +1,24 @@
----------------Application Ideas--------------------
+----------------------------------------------------Application Ideas---------------------------------------------------------
 
-* Application that can be used to make notes. Ability to add, remove, edit, and update notes. Potentially can add a login system.
+* Application that can be used to make notes. Ability to add, remove, edit, and update notes. Potentially can add a 
+    login system.
 
-* (Continuting with old project) An Admin Terminal to add, remove, edit, and delete Adventures. Adventurers are randomly generated via chat GPT. This would
-    more or less be an tool that an admin can use to make changes/approve of randomly generated Adventurers. Perhaps non logged in users can view approved
-    Adventurers.
+* (Continuting with old project) An Admin Terminal to add, remove, edit, and delete Adventures. Adventurers are randomly 
+    generated via chat GPT. This would more or less be an tool that an admin can use to make changes/approve of randomly 
+    generated Adventurers. Perhaps non logged in users can view approved Adventurers. This api will be developed later 
+    into a game.
 
-* Iventory management system. Add, remove, edit, and update quantity of items. Perhaps add login functionality/multi location functionality.
+* Iventory management system. Add, remove, edit, and update quantity of items. Perhaps add login functionality/multi location
+    functionality.
 
-* Continuation of the Mobile Book store completed in sprint; create the API and create business tools that can show inventory of a location, purchase of a receipt, etc...
+* Continuation of the Mobile Book store completed in sprint; create the API and create business tools that can show inventory 
+    of a location, purchase of a receipt, etc...
+
+Final Verdict:
+
+Without confirmation, I think I'm gonna stick with the EJS and SQL Stack, which rules out the old project. 
+(March 17 as I write this).
+
+While it's a bit more than the one table, I think it woul be fun to continue the Mobile book store from the sprint. I think I'll
+focus more on the books API for adding, removing, and editing book information, but I'll set up the project so that I can expand
+on it later. I'll also update the data to have even more records, so the book queries have more "meat" to them.
