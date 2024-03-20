@@ -31,11 +31,12 @@ CREATE TABLE staff (
 -- Create the author table
 CREATE TABLE book (
     book_ID SERIAL PRIMARY KEY,
-    isbn VARCHAR(13) NOT NULL,
+    isbn VARCHAR(20) NOT NULL,
     title VARCHAR(255) NOT NULL,
     year INT,
     author_ID INT REFERENCES author(author_ID),
-    genre_ID INT REFERENCES genre(genre_ID)
+    genre_ID INT REFERENCES genre(genre_ID),
+    archived BOOLEAN DEFAULT false
 );
 
 -- Create the book_location table
