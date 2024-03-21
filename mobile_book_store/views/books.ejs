@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Book Page</title>
+</head>
+<body>
+    
+    <%- include ('./components/navbar.ejs') %>
+
+    <div id="main_content_zone">
+        <table>
+            <tr>
+                <th>Book ID</th>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Author ID</th>
+                <th>Genre ID</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <%
+                var bookTable=``; 
+                books.forEach(book => {
+                    bookTable += `<tr> <td> ${book.book_id} </td> <td> ${book.isbn} </td> <td> ${book.title} </td> <td> ${book.year} </td> <td> ${book.author_id} </td> <td> ${book.genre_id} </td> <td> <a href="/books/edit/${book.book_id}"> EDIT </a> </td> <td> DELETE </td> </tr>`
+                });
+            %>
+            <%- bookTable %>
+        </table>
+    </div>
+
+</body>
+</html>

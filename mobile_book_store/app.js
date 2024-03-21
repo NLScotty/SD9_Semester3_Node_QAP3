@@ -1,5 +1,6 @@
 const express = require("express");
 const apiRoutes = require('./routes/api-routes');
+const uiRoutes = require('./routes/ui-routes');
 
 
 const app = express();
@@ -9,12 +10,10 @@ const PORT =  3000;
 global.DEBUG = true;
 
 app.set('view engine', 'ejs');
+
 app.use(express.urlencoded({extended:true}));
 
-app.get("/", (request, response) => {
-    if(DEBUG) console.log("root route.")
-    response.send("the route for the sites root /.")
-})
+app.use('/', uiRoutes)
 
 app.use('/api', apiRoutes);
 

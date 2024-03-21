@@ -56,7 +56,7 @@ router.put("/books/add", async (request, response) => {
 router.patch("/books/edit", async (request, response) => {
     if(DEBUG) console.log("post api books route.")
     try{
-        let message = await editBook( request.body.book_id, request.body.isbn, request.body.title, request.body.year, request.body.author_id, request.body.genre_id);
+        let message = await editBook(request.body.book_id, request.body.isbn, request.body.title, request.body.year, request.body.author_id, request.body.genre_id);
         response.write(message);
         response.end()
     } catch{

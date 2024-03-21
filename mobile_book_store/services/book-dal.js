@@ -3,7 +3,7 @@ const dal = require("./pdb");
 const getBooks = function() {
     if(DEBUG) console.log("book-dal getBooks()");
     return new Promise(function(resolve, reject) {
-        const sql = "SELECT * FROM BOOK WHERE archived != true"
+        const sql = "SELECT * FROM BOOK WHERE archived != true ORDER BY book_id;"
         dal.query(sql, [], (err, result) => {
             if (err) {
                 if(DEBUG) console.log(err);
