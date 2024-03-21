@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Book Page</title>
+</head>
+<body>
+    
+    <%- include ('./components/navbar.ejs') %>
+
+    <div id="main_content_zone">
+        <p>Are you sure you want to delete the book "<%= book.title %>" book with ID of: <%= book.book_id  %> </p>
+        <form method="post">
+            <input type = "submit" value="confirm?"></input>
+        </form>
+    </div>
+
+</body>
+</html>

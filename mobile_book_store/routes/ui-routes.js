@@ -34,6 +34,28 @@ router.post('/books/edit/:bookid', async (request, response) =>{
     }
 });
 
+router.get('/books/delete/:bookid', async (request, response) =>{
+    if(DEBUG) console.log("get ui delete route.")
+    const book = await getBookById(request.params.bookid)
+    if(book[0] != undefined){
+        response.render('deletebook' , {book : book[0]})
+    }
+    else{
+        response.status(500).send('500 - Server error with data fetching.');
+    }
+});
+
+router.post("/books/delete/:bookid", async (request, response) => {
+    if(DEBUG) console.log("post ui delete route.")
+    const message = await deleteBook(request.params.bookid)
+    if(message == "Operation Complete - Book has been archived/deleted"){
+        response.render('deletebookcomplete')
+    }
+    else{
+        response.status(500).send('500 - Server error with data fetching.');
+    }
+});
+
 router.get('/authors', (request, response) =>{
     response.render('authors')
 });

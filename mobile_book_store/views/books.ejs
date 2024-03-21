@@ -24,7 +24,7 @@
             <%
                 var bookTable=``; 
                 books.forEach(book => {
-                    bookTable += `<tr> <td> ${book.book_id} </td> <td> ${book.isbn} </td> <td> ${book.title} </td> <td> ${book.year} </td> <td> ${book.author_id} </td> <td> ${book.genre_id} </td> <td> <a href="/books/edit/${book.book_id}"> EDIT </a> </td> <td> DELETE </td> </tr>`
+                    bookTable += `<tr> <td> ${book.book_id} </td> <td> ${book.isbn} </td> <td> ${book.title} </td> <td> ${book.year} </td> <td> ${book.author_id} </td> <td> ${book.genre_id} </td> <td> <a href="/books/edit/${book.book_id}"> EDIT </a> </td> <td> <a href="/books/delete/${book.book_id}"> DELETE </a> </td> </tr>`
                 });
             %>
             <%- bookTable %>
