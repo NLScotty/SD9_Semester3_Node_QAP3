@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"   href="/css/style.css">
     <title>Admin Book Page</title>
 </head>
 <body>
     
     <%- include ('./components/navbar.ejs') %>
-
     <div id="main_content_zone">
         <h1>Add New Book</h1>
         <form method="post">
             <label for="isbn"> ISBN: </label>
             <input type ="text" id="isbn" name="isbn"></input>
+            <br>
             <label for="title"> Title: </label>
             <input type ="text" id="title" name="title"></input>
+            <br>
             <label for="year"> Year: </label>
             <input type ="text" id="year" name="year"></input>
+            <br>
             <label for="author_id"> Author ID: </label>
             <input type ="text" id="author_id" name="author_id"></input>
+            <br>
             <label for="genre_id"> Genre ID: </label>
             <input type ="text" id="genre_id" name="genre_id"></input>
+            <br>
             <input type = "submit">
         </form>
     </div>
