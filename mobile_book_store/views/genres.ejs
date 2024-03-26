@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Genres Page</title>
+    <title>Admin Genre Page</title>
 </head>
 <body>
     
     <%- include ('./components/navbar.ejs') %>
 
     <div id="main_content_zone">
-        <h1>Welcome to the Genres page</h1>
-        <p>Use the navbar to navigate to other pages</p>
+        <table>
+            <tr>
+                <th>Genre ID</th>
+                <th>Genre Name</th>
+                <th>Genre Description</th>
+            </tr>
+            <%
+                var genreTable=``; 
+                genres.forEach(genre => {
+                    genreTable += `<tr> <td> ${genre.genre_id} </td> <td> ${genre.genre_name} </td> <td> ${genre.description} </td> </tr>`
+                });
+            %>
+            <%- genreTable %>
+        </table>
     </div>
 
 </body>

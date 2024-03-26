@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Authors Page</title>
+    <title>Admin Author Page</title>
 </head>
 <body>
     
     <%- include ('./components/navbar.ejs') %>
 
     <div id="main_content_zone">
-        <h1>Welcome to the Authors page</h1>
-        <p>Use the navbar to navigate to other pages</p>
+        <table>
+            <tr>
+                <th>Author ID</th>
+                <th>Name</th>
+            </tr>
+            <%
+                var authorTable=``; 
+                authors.forEach(author => {
+                    authorTable += `<tr> <td> ${author.author_id} </td> <td> ${author.author_name} </td>  </tr>`
+                });
+            %>
+            <%- authorTable %>
+        </table>
     </div>
 
 </body>

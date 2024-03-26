@@ -1,5 +1,7 @@
 const express =require('express');
 const { getBooks, getBookById, addNewBook , editBook, deleteBook} = require('../services/book-dal');
+const { getAuthors } = require('../services/author-dal');
+const { getGenres } = require('../services/genre-dal');
 
 const router = express.Router();
 
@@ -10,6 +12,33 @@ router.get('', (request, response) =>{
 router.get('/books', async (request, response) =>{
     const books = await getBooks()
     response.render('books' , {books : books})
+});
+
+router.get('/books/add', async (request, response) =>{
+    response.render('addbook')
+});
+
+router.post('/books/add', async (request, response) =>{
+    const message = await addNewBook(request.body.isbn, request.body.title, request.body.year, request.body.author_id, request.body.genre_id)
+    console.log(message);
+    if(message == "Operation Complete - Book added to database"){
+        response.render('addbookcomplete');
+    }
+    else{
+        response.status(500).send('500 - Server error with data fetching.');
+    }
+});
+
+// The patch/edit route
+router.post('/books/edit/:bookid', async (request, response) =>{
+    const message = await editBook(request.params.bookid, request.body.isbn, request.body.title, request.body.year, request.body.author_id, request.body.genre_id)
+    console.log(message);
+    if(message == "Operation Complete - Book has been edited"){
+        response.render('editbookcomplete');
+    }
+    else{
+        response.status(500).send('500 - Server error with data fetching.');
+    }
 });
 
 router.get('/books/edit/:bookid', async (request, response) =>{
@@ -56,12 +85,14 @@ router.post("/books/delete/:bookid", async (request, response) => {
     }
 });
 
-router.get('/authors', (request, response) =>{
-    response.render('authors')
+router.get('/authors', async (request, response) =>{
+    const authors = await getAuthors()
+    response.render('authors' , {authors : authors})
 });
 
-router.get('/genres', (request, response) =>{
-    response.render('genres')
+router.get('/genres', async (request, response) =>{
+    const genres = await getGenres()
+    response.render('genres' , {genres : genres})
 });
 
 
