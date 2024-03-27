@@ -30,10 +30,11 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
 
-app.use('/', uiRoutes)
-
+// I first have it check to see if the url is an api request. If so, check the api routes.
 app.use('/api', apiRoutes);
-
+// I then check the website/ui routes
+app.use('/', uiRoutes)
+// If no route is found, give a 404
 app.use((request, response) => {
     if(DEBUG) console.log('404 - route not found.');
     response.status(404).write('404 - route not found.');

@@ -1,5 +1,8 @@
 const dal = require("./pdb");
 
+// The database access functions for books.
+// I have all the crud methods implemented.
+
 const getBooks = function() {
     if(DEBUG) console.log("book-dal getBooks()");
     return new Promise(function(resolve, reject) {

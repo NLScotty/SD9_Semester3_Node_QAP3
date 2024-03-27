@@ -1,5 +1,9 @@
 const dal = require("./pdb");
 
+// The database access functions for genre.
+// I focus on books, so author and genres only
+// consist of some get/select functions
+
 const getGenres = function() {
     if(DEBUG) console.log("genre-dal getGenres()");
     return new Promise(function(resolve, reject) {

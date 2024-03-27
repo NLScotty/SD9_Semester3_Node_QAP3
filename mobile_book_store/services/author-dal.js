@@ -1,4 +1,7 @@
 const dal = require("./pdb");
+// The database access functions for author.
+// I focus on books, so author and genres only
+// consist of some get/select functions
 
 const getAuthors = function() {
     if(DEBUG) console.log("author-dal getAuthors()");
